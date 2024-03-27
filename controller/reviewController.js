@@ -7,22 +7,19 @@ exports.getReviews = catchAsync(async (req, res, next) => {
   const reviews = await Review.find();
 
   if (!reviews) {
-    console.log('no reviews');
-    res.status(404);
+    return next(new AppError('No reviews at the moment.', 204));
   }
 
   res.status(200).json({
     status: 'success',
+    results: reviews.length,
     data: { reviews }
   });
 });
 
 exports.getReview = catchAsync(async (req, res, next) => {
+  // console.log(req.params);
   const review = await Review.findById(req.params.id);
-
-  if (!review) {
-    next(new AppError('No review with the provided id', 404));
-  }
 
   res.status(200).json({
     status: 'success',

@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const app = require('./app');
 
 dotenv.config({ path: './config.env' });
+console.log(process.env.NODE_ENV);
 
 const DB = process.env.DB_URL;
 

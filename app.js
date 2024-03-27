@@ -9,7 +9,7 @@ app.use(express.json());
 
 app.use('/api/v1/litview', reviewRouter);
 app.use('*', (req, res, next) => {
-  next(new AppError('The routes does not exist on this server', 404));
+  return next(new AppError('The routes does not exist on this server', 404));
 });
 app.use(globalErrorHandler);
 
