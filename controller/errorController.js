@@ -5,11 +5,26 @@ const handleCastErrorDB = error => {
   return new AppError(message, 400);
 };
 
+const handleValidationErrorDB = error => {
+  const { errors } = error;
+  const message = Object.entries(errors)
+    .map(el => el[1].message)
+    .join(', ');
+  return new AppError(`Invalid input data: ${message}`, 400);
+};
+
+const handleDuplicateKeyErrorDB = error => {
+  const { title } = error.keyValue;
+  const message = `Duplicate Error: ${title} review already exists in the database`;
+
+  return new AppError(message, 404);
+};
+
 const sendErrorDev = (err, res) => {
   res.status(err.statusCode).json({
+    error: err,
     status: err.status,
     message: err.message,
-    error: err,
     errorStack: err.stack
   });
 };
@@ -32,6 +47,8 @@ module.exports = (err, req, res, next) => {
   } else if (process.env.NODE_ENV === 'production') {
     let error = { ...err };
     if (err.name === 'CastError') error = handleCastErrorDB(error);
+    if (err.name === 'ValidationError') error = handleValidationErrorDB(error);
+    if (err.code === 11000) error = handleDuplicateKeyErrorDB(error);
 
     sendErrorProd(error, res);
   }

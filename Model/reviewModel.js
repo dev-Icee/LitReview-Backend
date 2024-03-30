@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const reviewSchema = new mongoose.Schema({
   title: {
     type: String,
+    unique: true,
     required: [true, 'You must enter a book title']
   },
   image: String,
