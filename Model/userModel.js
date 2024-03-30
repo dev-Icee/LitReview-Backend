@@ -1,5 +1,7 @@
+// const { promisify } = require('util');
 const mongoose = require('mongoose');
 const validator = require('validator');
+const bcrypt = require('bcrypt');
 
 const userSchema = new mongoose.Schema({
   name: {
@@ -16,9 +18,8 @@ const userSchema = new mongoose.Schema({
   password: {
     type: String,
     minLength: 6,
-    required: [true, 'User must have  a password']
-    // ,
-    // select: false
+    required: [true, 'User must have  a password'],
+    select: false
   },
   passwordConfirm: {
     type: String,
@@ -35,6 +36,15 @@ const userSchema = new mongoose.Schema({
     enum: ['admin', 'user'],
     default: 'user'
   }
+});
+
+userSchema.pre('save', async function(next) {
+  if (!this.isModified('password') || !this.isNew) return next();
+
+  const hashedPassword = await bcrypt.hash(this.password, 10);
+  this.password = hashedPassword;
+  this.passwordConfirm = undefined;
+  next();
 });
 
 const User = new mongoose.model('User', userSchema);
