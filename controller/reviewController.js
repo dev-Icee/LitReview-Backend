@@ -8,7 +8,7 @@ exports.getReviews = catchAsync(async (req, res, next) => {
 
   if (!reviews) {
     return next(
-      new AppError('No reviews at the moment. Check back later', 204)
+      new AppError('No reviews at the moment. Check back later.', 204)
     );
   }
 

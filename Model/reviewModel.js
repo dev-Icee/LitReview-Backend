@@ -12,7 +12,8 @@ const reviewSchema = new mongoose.Schema({
     type: String,
     required: [true, 'A book must have a description']
   },
-  rating: { type: Number, default: 4.5 }
+  rating: { type: Number, default: 4.5 },
+  active: { type: Boolean, default: true }
 });
 
 const Reviews = new mongoose.model('Reviews', reviewSchema);
