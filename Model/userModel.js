@@ -1,4 +1,4 @@
-// const { promisify } = require('util');
+const { promisify } = require('util');
 const mongoose = require('mongoose');
 const validator = require('validator');
 const bcrypt = require('bcrypt');
@@ -45,6 +45,11 @@ userSchema.pre('save', async function(next) {
   this.password = hashedPassword;
   this.passwordConfirm = undefined;
   next();
+});
+
+userSchema.methods('confirmPassword', async function(password) {
+  const match = await promisify(bcrypt).compare(password, this.password);
+  return match;
 });
 
 const User = new mongoose.model('User', userSchema);
