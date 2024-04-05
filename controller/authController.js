@@ -10,25 +10,21 @@ const signToken = id => {
   });
 };
 
-const createSendToken = (id, res) => {
-  const token = signToken(id);
+const createSendToken = (user, res, statusCode) => {
+  const token = signToken(user._id);
 
   const cookieOptions = {
-    expires: new Date(
-      Date.now + process.env.COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000
-    ),
     httpOnly: true
   };
-
-  if (process.env.NODE_ENV === 'production') {
-    cookieOptions.secure = true;
-  }
+  if (process.env.NODE_ENV === 'production') cookieOptions.secure = true;
 
   res.cookie('jwt', token, cookieOptions);
 
-  res.status(201).json({
+  user.password = undefined;
+
+  res.status(statusCode).json({
     status: 'success',
-    message: 'user created succesfully',
+    message: `User ${statusCode === 201 ? 'created' : 'logged in'}`,
     token
   });
 };
@@ -41,13 +37,7 @@ exports.signup = catchAsync(async (req, res, next) => {
     passwordConfirm: req.body.passwordConfirm
   });
 
-  const token = signToken(newUser._id);
-
-  res.status(201).json({
-    status: 'success',
-    message: 'user created succesfully',
-    token
-  });
+  createSendToken(newUser, res, 201);
 });
 
 exports.login = catchAsync(async (req, res, next) => {
@@ -57,11 +47,11 @@ exports.login = catchAsync(async (req, res, next) => {
     return next(new AppError('Provide a valid email and paasword', 404));
   }
 
-  const user = await User.findOne({ email });
+  const user = await User.findOne({ email }).select('+password');
 
-  const confirmPassword = user.confirmPassword(password);
-
-  if (!user || !confirmPassword) {
+  if (!user || !(await user.confirmPassword(password, user.password))) {
     return next(new AppError('Invalid Email or password', 401));
   }
+
+  createSendToken(user, res, 200);
 });
