@@ -6,11 +6,10 @@ const Reviews = require('./../Model/reviewModel');
 const Users = require('./../Model/userModel');
 
 dotenv.config({ path: './config.env' });
-console.log(process.env.DB_URL);
 
-mongoose
-  .connect(process.env.DB_URL)
-  .then(() => console.log('DB connection successful!'));
+const DB = process.env.DB_URL;
+
+mongoose.connect(DB).then(() => console.log('DB connection successful!'));
 
 const reviews = JSON.parse(fs.readFileSync(`${__dirname}/data.json`, 'utf-8'));
 const users = JSON.parse(fs.readFileSync(`${__dirname}/users.json`, 'utf-8'));

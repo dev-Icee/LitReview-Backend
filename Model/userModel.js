@@ -35,6 +35,7 @@ const userSchema = new mongoose.Schema({
     enum: ['admin', 'user'],
     default: 'user'
   },
+  active: { type: Boolean, default: true },
   passwordChangedAt: Date
 });
 

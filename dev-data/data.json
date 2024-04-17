@@ -1,88 +1,84 @@
 [
   {
     "title": "The Hitchhiker's Guide to the Galaxy",
-    "image": "https://upload.wikimedia.org/wikipedia/en/b/bd/H2G2_UK_front_cover.jpg",
     "author": "Douglas Adams",
+    "coverImage": "The_Hitchhiker_Guide_to_the_galaxy.jpeg",
     "description": "The Hitchhiker's Guide to the Galaxy is the first book in the Hitchhiker's Guide to the Galaxy comedy science fiction trilogy of five books by Douglas Adams, with a sixth book written by Eoin Colfer. The novel is an adaptation of the first four parts of Adams's radio series of the same name, centering on the adventures of the only man to survive the destruction of Earth; while roaming outer space, he comes to learn the truth behind Earth's existence. The novel was first published in London on 12 October 1979.[2] It sold 250,000 copies in the first three months.",
     "rating": 4.5
   },
   {
     "title": "The Lord of the Rings",
-    "image": "https://upload.wikimedia.org/wikipedia/en/e/e9/First_Single_Volume_Edition_of_The_Lord_of_the_Rings.gif",
     "author": "J.R.R. Tolkien",
-
+    "coverImage": "The_Lord_of_the_Rings.gif",
     "description": "The title refers to the story's main antagonist,[b] Sauron, the Dark Lord who in an earlier age created the One Ring to rule the other Rings of Power given to Men, Dwarves, and Elves, in his campaign to conquer all of Middle-earth. From homely beginnings in the Shire, a hobbit land reminiscent of the English countryside, the story ranges across Middle-earth, following the quest to destroy the One Ring, seen mainly through the eyes of the hobbits Frodo, Sam, Merry, and Pippin. Aiding Frodo are the Wizard Gandalf, the Men Aragorn and Boromir, the Elf Legolas, and the Dwarf Gimli, who unite in order to rally the Free Peoples of Middle-earth against Sauron's armies and give Frodo a chance to destroy the One Ring in the fire of Mount Doom.",
     "rating": 4.5
   },
   {
     "title": "Dune",
-    "image": "https://upload.wikimedia.org/wikipedia/en/d/de/Dune-Frank_Herbert_%281965%29_First_edition.jpg",
+    "coverImage": "https://upload.wikimedia.org/wikipedia/en/d/de/Dune-Frank_Herbert_%281965%29_First_edition.jpg",
     "author": "JFrank Herbert",
-
     "description": "Dune is set in the distant future in a feudal interstellar society in which various noble houses control planetary fiefs. It tells the story of young Paul Atreides, whose family accepts the stewardship of the planet Arrakis. While the planet is an inhospitable and sparsely populated desert wasteland, it is the only source of melange, or spice, a drug that extends life and enhances mental abilities. Melange is also necessary for space navigation, which requires a kind of multidimensional awareness and foresight that only the drug provides. As melange can only be produced on Arrakis, control of the planet is a coveted and dangerous undertaking. The story explores the multilayered interactions of politics, religion, ecology, technology, and human emotion, as the factions of the empire confront each other in a struggle for the control of Arrakis and its spice.",
     "rating": 4.5
   },
   {
     "title": "To Kill a Mockingbird",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/To_Kill_a_Mockingbird_%28first_edition_cover%29.jpg/330px-To_Kill_a_Mockingbird_%28first_edition_cover%29.jpg",
+    "coverImage": "To_Kill_a_Mockingbird.jpg",
     "author": "Harper Lee",
-
     "description": "Despite dealing with the serious issues of rape and racial inequality, the novel is renowned for its warmth and humor. Atticus Finch, the narrator's father, has served as a moral hero for many readers and as a model of integrity for lawyers. The historian Joseph Crespino explains, In the twentieth century, To Kill a Mockingbird is probably the most widely read book dealing with race in America, and its main character, Atticus Finch, the most enduring fictional image of racial heroism.As a Southern Gothic novel and Bildungsroman, the primary themes of To Kill a Mockingbird involve racial injustice and the destruction of innocence. Scholars have noted that Lee also addresses issues of class, courage, compassion, and gender roles in the Deep South. Lessons from the book emphasize tolerance and decry prejudice.",
     "rating": 4.8
   },
   {
     "title": "1984",
     "author": "George Orwell",
-    "image": "https://upload.wikimedia.org/wikipedia/en/5/51/1984_first_edition_cover.jpg",
+    "coverImage": "1984_first_edition_cover.jpg",
     "description": "George Orwell's dystopian novel about surveillance and totalitarianism.",
     "rating": 4.7
   },
   {
     "title": "The Great Gatsby",
-    "image": "https://en.wikipedia.org/wiki/File:The_Great_Gatsby_Cover_1925_Retouched.jpg",
+    "coverImage": "https://en.wikipedia.org/wiki/File:The_Great_Gatsby_Cover_1925_Retouched.jpg",
     "author": "F.Scott Fitzgerald",
     "description": "The story takes place in an imagined future in an unspecified year believed to be 1984, when much of the world is in perpetual war. Great Britain, now known as Airstrip One, has become a province of the totalitarian superstate Oceania, which is led by Big Brother, a dictatorial leader supported by an intense cult of personality manufactured by the Party's Thought Police. The Party engages in omnipresent government surveillance and, through the Ministry of Truth, historical negationism and constant propaganda to persecute individuality and independent thinking.",
     "rating": 4.6
   },
   {
     "title": "Pride and Prejudice",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/PrideAndPrejudiceTitlePage.jpg/330px-PrideAndPrejudiceTitlePage.jpg",
+    "coverImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/PrideAndPrejudiceTitlePage.jpg/330px-PrideAndPrejudiceTitlePage.jpg",
     "author": "Jane Austen",
-
     "description": "Mr Bennet, owner of the Longbourn estate in Hertfordshire, has five daughters, but his property is entailed and can only be passed to a male heir. His wife also lacks an inheritance, so his family faces becoming poor upon his death. Thus, it is imperative that at least one of the daughters marry well to support the others, which is a primary motivation driving the plot.",
     "rating": 4.9
   },
   {
     "title": "Brave New World",
-    "image": "https://upload.wikimedia.org/wikipedia/en/6/62/BraveNewWorld_FirstEdition.jpg",
+    "coverImage": "Brave_New_World.jpg",
     "author": "Aldous Huxley",
     "description": "Brave New World is a dystopian novel by English author Aldous Huxley, written in 1931 and published in 1932.[2] Largely set in a futuristic World State, whose citizens are environmentally engineered into an intelligence-based social hierarchy, the novel anticipates huge scientific advancements in reproductive technology, sleep-learning, psychological manipulation and classical conditioning that are combined to make a dystopian society which is challenged by the story's protagonist. Huxley followed this book with a reassessment in essay form, Brave New World Revisited (1958), and with his final novel, Island (1962), the utopian counterpart. This novel is often compared to George Orwell's 1984 (1949).",
     "rating": 4.4
   },
   {
     "title": "Fahrenheit 451",
-    "image": "https://upload.wikimedia.org/wikipedia/en/d/db/Fahrenheit_451_1st_ed_cover.jpg",
+    "coverImage": "Fahrenheit_451.jpg",
     "author": "Ray Bradbury",
     "description": "Fahrenheit 451 is a dystopian novel by American writer Ray Bradbury, first published in 1953. The story is set in a future society where books are banned and 'firemen' burn any that are found. The protagonist, Guy Montag, is a fireman who begins to question the censorship and suppression of knowledge in his society. As he rebels against the oppressive regime, he discovers the power and importance of literature. Bradbury's work is a cautionary tale about the consequences of censorship, the dehumanizing effects of technology, and the value of intellectual freedom.",
     "rating": 4.3
   },
   {
     "title": "The Handmaid's Tale",
-    "image": "https://upload.wikimedia.org/wikipedia/en/1/18/TheHandmaidsTale%281stEd%29.jpg",
+    "coverImage": "https://upload.wikimedia.org/wikipedia/en/1/18/TheHandmaidsTale%281stEd%29.jpg",
     "author": "Margaret Atwood",
     "description": "The Handmaid's Tale is a dystopian novel by Canadian author Margaret Atwood, published in 1985. The story is set in the Republic of Gilead, a theocratic and authoritarian society where women are subjugated and used for reproductive purposes. The protagonist, Offred, is a Handmaid assigned to produce children for the ruling class. The novel explores themes of power, control, and the subjugation of women, offering a chilling and thought-provoking commentary on gender roles and societal oppression.",
     "rating": 4.6
   },
   {
     "title": "A Clockwork Orange",
-    "image": "https://upload.wikimedia.org/wikipedia/en/2/23/Clockwork_orange.jpg",
+    "coverImage": "Clockwork_orange.jpeg",
     "author": "Anthony Burgess",
     "description": "A Clockwork Orange is a dystopian novel by British author Anthony Burgess, published in 1962. Set in a future society, the story follows Alex, a teenage delinquent who leads a small gang in acts of violence and mayhem. After being arrested, Alex undergoes an experimental psychological conditioning technique to eliminate his violent tendencies. The novel explores themes of free will, morality, and the consequences of state control. Burgess's use of a distinctive teenage slang, Nadsat, adds a unique and immersive layer to the narrative.",
     "rating": 4.2
   },
   {
     "title": "The Road",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/The-road.jpg/330px-The-road.jpg",
+    "coverImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/The-road.jpg/330px-The-road.jpg",
     "author": "Cormac McCarthy",
     "description": "The Road is a post-apocalyptic novel by American author Cormac McCarthy, published in 2006. The story follows an unnamed father and his young son as they journey across a desolate and ash-covered landscape in the aftermath of an unspecified catastrophe. As they struggle to survive and maintain their humanity, the novel explores themes of love, resilience, and the bleakness of a world stripped of civilization. McCarthy's spare and poetic prose intensifies the emotional impact of the father-son relationship amidst the harsh conditions of their journey.",
     "rating": 4.7
@@ -90,7 +86,7 @@
 
   {
     "title": "Never Let Me Go",
-    "image": "https://upload.wikimedia.org/wikipedia/en/6/66/Never_Let_Me_Go_%28First-edition_cover%29.jpg",
+    "coverImage": "https://upload.wikimedia.org/wikipedia/en/6/66/Never_Let_Me_Go_%28First-edition_cover%29.jpg",
     "author": "Kazuo Ishiguro",
     "description": "Never Let Me Go is a dystopian science fiction novel by British author Kazuo Ishiguro, published in 2005. The story is set in an alternate England where human clones are created for the sole purpose of providing organs for transplantation. The novel follows the lives of three friends—Kathy, Ruth, and Tommy—from their childhood at Hailsham, an elite boarding school, to adulthood as they come to terms with their predetermined fate. Ishiguro's poignant exploration of identity, ethics, and the nature of humanity makes Never Let Me Go a compelling and thought-provoking read.",
     "rating": 4.4

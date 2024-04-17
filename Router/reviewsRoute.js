@@ -5,15 +5,17 @@ const authController = require('./../controller/authController');
 
 const router = express.Router();
 
+router.use(authController.protect);
+
 router
   .route('/')
-  .get(authController.protect, reviewController.getReviews)
-  .post(reviewController.createReview);
+  .get(authController.checkRole('admin'), reviewController.getReviews)
+  .post(reviewController.uploadFile, reviewController.createReview);
 
 router
   .route('/:id')
   .get(reviewController.getReview)
-  .patch(reviewController.updateReview)
-  .delete(reviewController.deleteReview);
+  .patch(authController.checkRole('admin'), reviewController.updateReview)
+  .delete(authController.checkRole('admin'), reviewController.deleteReview);
 
 module.exports = router;

@@ -6,14 +6,13 @@ const reviewSchema = new mongoose.Schema({
     unique: true,
     required: [true, 'You must enter a book title']
   },
-  image: String,
+  coverImage: { type: String, default: 'default.jpg' },
   author: { type: String, required: [true, 'A book must have an Author'] },
   description: {
     type: String,
     required: [true, 'A book must have a description']
   },
-  rating: { type: Number, default: 4.5 },
-  active: { type: Boolean, default: true }
+  rating: { type: Number, default: 4.5 }
 });
 
 const Reviews = new mongoose.model('Reviews', reviewSchema);

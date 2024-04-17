@@ -3,6 +3,33 @@ const Review = require('./../Model/reviewModel');
 const catchAsync = require('../utils/catchAsync');
 const AppError = require('../utils/appError');
 
+const multer = require('multer');
+
+const multerStorage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, 'public/img/book-cover');
+  },
+  filename: (req, file, cb) => {
+    console.log(req.body, file);
+    const { title } = req.body;
+    const uniqueSuffix = file.mimetype.split('/')[1];
+    cb(null, `${title.split(' ').join('-')}-${Date.now()}.${uniqueSuffix}`);
+  }
+});
+
+const multerFilter = (req, file, cb) => {
+  console.log(file);
+  if (file.mimetype.startsWith('image')) {
+    cb(null, true);
+  } else {
+    cb(new AppError('File is not an Image', 400), false);
+  }
+};
+
+const upload = multer({ storage: multerStorage, fileFilter: multerFilter });
+
+exports.uploadFile = upload.single('coverImage');
+
 exports.getReviews = catchAsync(async (req, res, next) => {
   const reviews = await Review.find();
 
