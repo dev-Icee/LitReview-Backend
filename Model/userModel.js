@@ -18,15 +18,15 @@ const userSchema = new mongoose.Schema({
   password: {
     type: String,
     minLength: 6,
-    required: [true, 'User must have  a password'],
+    required: [true, 'User must have a password'],
     select: false
   },
   passwordConfirm: {
     type: String,
-    required: [true, 'Password does not match'],
+    required: [true, 'Confirm your password'],
     validate: {
       validator: function(el) {
-        return this.password === el;
+        return el === this.password;
       },
       message: 'Password does not match'
     }
@@ -48,6 +48,13 @@ userSchema.pre('save', async function(next) {
   const hashedPassword = await bcrypt.hash(this.password, 10);
   this.password = hashedPassword;
   this.passwordConfirm = undefined;
+  next();
+});
+
+userSchema.pre('save', function(next) {
+  if (!this.isModified('password') || this.isNew) return next();
+
+  this.passwordChangedAt = Date.now() - 1000;
   next();
 });
 

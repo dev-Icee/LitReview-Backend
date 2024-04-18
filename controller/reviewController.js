@@ -1,9 +1,8 @@
+const multer = require('multer');
 const Review = require('./../Model/reviewModel');
 
 const catchAsync = require('../utils/catchAsync');
 const AppError = require('../utils/appError');
-
-const multer = require('multer');
 
 const multerStorage = multer.diskStorage({
   destination: (req, file, cb) => {
