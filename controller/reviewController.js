@@ -9,7 +9,6 @@ const multerStorage = multer.diskStorage({
     cb(null, 'public/img/book-cover');
   },
   filename: (req, file, cb) => {
-    console.log(req.body, file);
     const { title } = req.body;
     const uniqueSuffix = file.mimetype.split('/')[1];
     cb(null, `${title.split(' ').join('-')}-${Date.now()}.${uniqueSuffix}`);
@@ -17,7 +16,6 @@ const multerStorage = multer.diskStorage({
 });
 
 const multerFilter = (req, file, cb) => {
-  console.log(file);
   if (file.mimetype.startsWith('image')) {
     cb(null, true);
   } else {

@@ -9,8 +9,12 @@ router.use(authController.protect);
 
 router
   .route('/')
-  .get(authController.checkRole('admin'), reviewController.getReviews)
-  .post(reviewController.uploadFile, reviewController.createReview);
+  .get(reviewController.getReviews)
+  .post(
+    authController.checkRole('admin'),
+    reviewController.uploadFile,
+    reviewController.createReview
+  );
 
 router
   .route('/:id')

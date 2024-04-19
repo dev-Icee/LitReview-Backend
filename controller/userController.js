@@ -16,3 +16,31 @@ exports.getUsers = catchAsync(async (req, res, next) => {
     data: { users }
   });
 });
+
+exports.getUser = catchAsync(async (req, res, next) => {
+  // console.log(req.params);
+  const user = await User.findById(req.params.id);
+
+  res.status(200).json({
+    status: 'success',
+    data: {
+      user
+    }
+  });
+});
+
+exports.getMe = (req, res, next) => {
+  req.params.id = req.user._id;
+  next();
+};
+
+exports.changeMe = catchAsync(async (req, res, next) => {
+  if (req.body.password || req.body.passwordConfirm) {
+    return next(
+      new AppError(
+        'This route is not for changing password. Use the chnage password route.',
+        400
+      )
+    );
+  }
+});
