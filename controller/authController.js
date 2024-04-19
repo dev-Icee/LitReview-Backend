@@ -59,12 +59,14 @@ exports.login = catchAsync(async (req, res, next) => {
   const { email, password } = req.body;
 
   if (!email || !password) {
-    return next(new AppError('Provide a valid email and paasword', 404));
+    return next(new AppError('Provide a valid email and password', 404));
   }
 
   const user = await User.findOne({ email }).select('+password');
 
-  if (!user || !(await user.confirmPassword(password, user.password))) {
+  const match = await user.confirmPassword(password, user.password);
+
+  if (!user || !match) {
     return next(new AppError('Invalid Email or password', 401));
   }
 
@@ -164,15 +166,16 @@ exports.updateMyPassword = catchAsync(async (req, res, next) => {
     '+password'
   );
 
-  const { passwordConfirm } = req.body;
+  const { currentPassword, password, passwordConfirm } = req.body;
 
-  const match = await user.confirmPassword(passwordConfirm, user.password);
+  const match = await user.confirmPassword(currentPassword, user.password);
 
-  if (!match)
+  if (!match) {
     return next(new AppError('The password you entered is incorrect.', 400));
+  }
 
-  user.password = req.body.password;
-  user.passwordConfirm = req.body.passwordConfirm;
+  user.password = password;
+  user.passwordConfirm = passwordConfirm;
   await user.save();
 
   createSendToken(user, res, 200);
